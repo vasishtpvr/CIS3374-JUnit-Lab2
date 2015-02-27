@@ -32,13 +32,13 @@ public class FareCalculatorTest {
 	@Parameters
 	public static Collection<Object[]> testParams(){
 		return Arrays.asList(new Object[][]{
-				{0.0,4,"6:00",false},{0.0,5,"10:00",false},{0.0,5,"10:00",false},{0.0,5,"10:00",false},{0.0,5,"10:00",false}
-		});
+				{0.0,5,"10:00",false},{2.5,6,"10:00",false},{0.0,65,"10:00",false}
+				,{2.5,64,"10:00",false},{2.5,70,"7:00",false},{0.0,75,"6:59",false},{0.0,80,"9:01",false},{2.5,80,"9:00",false},{0.0,80,"7:30",true},{0.0,85,"8:00",true}});
 		}
-	@SuppressWarnings("deprecation")
+
 	@Test
 	public void calculateFareTest(){
-		assertEquals(0.0,FareCalculator.calculateFare(age,time,isHoliday),DELTA);
+		assertEquals(expected,FareCalculator.calculateFare(age,time,isHoliday),DELTA);
 				}
 	
 	
